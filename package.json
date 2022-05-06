@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.ts"
+    "start": "nodemon src/index.ts",
+    "postinstall": "husky install"
   },
   "repository": "git@github.com:assoares383/node-admin.git",
   "author": "= <alexandressoares383@gmail.com>",
@@ -17,7 +18,15 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
+    "and": "^0.0.3",
     "cors": "^2.8.5",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
